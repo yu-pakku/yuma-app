@@ -16,6 +16,6 @@ class TodoController extends Controller
             'title' => 'required|string|max:255',
         ]);
 
-        return Todo::created($validated);
+        return Todo::create($validated);
     }
 }
