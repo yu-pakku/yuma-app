@@ -30,6 +30,32 @@ export default function Home() {
     fetchTodos();
   };
 
+//* 削除
+  const deleteTodo = async (id: number) => {
+    await fetch(`http://localhost:8001/api/todos/${id}`, {
+      method: "DELETE",
+    });
+    fetchTodos();
+  };
+
+//* 完了チェック
+  const toggleTodo = async (id: number) => {
+    await fetch(`http://localhost:8001/api/todos/${id}/toggle`, {
+      method: "PATCH",
+    });
+    fetchTodos();
+  };
+
+//* 更新
+  const updateTodo = async (id: number, title: string) => {
+    await fetch(`http://localhost:8001/api/todos/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title }),
+    });
+    fetchTodos();
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
       <div className="bg-white shadow-xl rounded-xl p-6 w-full max-w-md">
@@ -55,10 +81,43 @@ export default function Home() {
           {todos.map((todo: any) => (
             <li
               key={todo.id}
-              className="bg-gray-50 border border-gray-200 p-3 rounded-md"
+              className="bg-gray-50 border border-gray-200 p-3 rounded-md flex justify-between items-center"
             >
-              {todo.title}
+              <label className="flex items-center gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => toggleTodo(todo.id)}
+                />
+                <span className={todo.completed ? "line-through text-gray-500" : ""}>
+                  {todo.title}
+                </span>
+              </label>
+
+              <div className="flex gap-2">
+                {/* 編集ボタン */}
+                <button
+                  onClick={() =>
+                    updateTodo(
+                      todo.id,
+                      prompt("新しいタイトルは？") || todo.title
+                    )
+                  }
+                  className="text-blue-500 hover:underline"
+                >
+                  編集
+                </button>
+
+                {/* 削除ボタン */}
+                <button
+                  onClick={() => deleteTodo(todo.id)}
+                  className="text-red-500 hover:underline"
+                >
+                  削除
+                </button>
+              </div>
             </li>
+
           ))}
         </ul>
       </div>
