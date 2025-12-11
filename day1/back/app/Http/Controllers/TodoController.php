@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTodoRequest;
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\HttpCache\Store;
 
 class TodoController extends Controller
 {
@@ -11,12 +13,8 @@ class TodoController extends Controller
         return Todo::orderBy('created_at', 'desc')->get();
     }
 
-    public function store(Request $request) {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-        ]);
-
-        return Todo::create($validated);
+    public function store(StoreTodoRequest $request) {
+        return Todo::create($request->validated());
     }
 
     public function destroy($id) {
