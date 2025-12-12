@@ -26,7 +26,7 @@ class TodoController extends Controller
 
     public function toggle($id) {
         $todo = Todo::findOrFail($id);
-        $todo->completed = !$todo->completed;
+        $todo->done = !$todo->done;
         $todo->save();
 
         return $todo;

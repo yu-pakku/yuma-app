@@ -11,5 +11,5 @@ Route::get('/user', function (Request $request) {
 Route::get('/todos', [TodoController::class, 'index']);
 Route::post('/todos', [TodoController::class, 'store']);
 Route::delete('/todos/{id}', [TodoController::class, 'destroy']);
-Route::patch('todo/{id}/toggle', [TodoController::class, 'toggle']);
+Route::patch('todos/{id}/toggle', [TodoController::class, 'toggle']);
 Route::put('todos/{id}', [TodoController::class, 'update']);
