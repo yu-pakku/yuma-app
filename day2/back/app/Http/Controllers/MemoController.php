@@ -34,11 +34,11 @@ class MemoController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'required|string',
             'content' => 'required|string',
         ]);
 
-        $memo = Memo::findOrFile($id);
+        $memo = Memo::findOrFail($id);
         $memo->update($validated);
 
         return $memo;
