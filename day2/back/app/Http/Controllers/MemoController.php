@@ -27,7 +27,7 @@ class MemoController extends Controller
     //* 詳細取得
     public function show($id)
     {
-        return Memo::findOrFile($id);
+        return Memo::findOrFail($id);
     }
 
     //* 更新
