@@ -13,21 +13,15 @@ class MemoController extends Controller
         return Memo::orderBy('created_at', 'desc')->get();
     }
 
-    //*　新規作成
+    //* 新規作成
     public function store(Request $request)
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'content' => "required|string",
         ]);
 
         return Memo::create($validated);
-    }
-
-    //* 詳細取得
-    public function show($id)
-    {
-        return Memo::findOrFile($id);
     }
 
     //* 更新
@@ -50,6 +44,6 @@ class MemoController extends Controller
         $memo = Memo::findOrFail($id);
         $memo->delete();
 
-        return response()->json(['message' => 'deleted']);
+        return response()->json(['message' => 'delete']);
     }
 }
