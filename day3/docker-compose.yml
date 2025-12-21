@@ -5,6 +5,8 @@ services:
       - ./front:/front
     ports:
       - 3003:3000
+    environment:
+      - LARAVEL_API=http://api:8000/api/memos
   api:
     build: ./back
     volumes:
