@@ -14,7 +14,7 @@ Route::middleware('x-demo-token')->group(function () {
     Route::post('/memos', [MemoController::class, 'store']);
     Route::get('/memos/{id}', [MemoController::class, 'show']);
     Route::put('/memos/{id}', [MemoController::class, 'update']);
-    Route::delete('/memos{id}', [MemoController::class, 'destroy']);
+    Route::delete('/memos/{id}', [MemoController::class, 'destroy']);
     Route::get('/tags', [TagController::class, 'index']);
     Route::post('/tags', [TagController::class, 'store']);
 });

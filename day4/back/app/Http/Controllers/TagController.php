@@ -14,14 +14,12 @@ class TagController extends Controller
 
     //* タグ作成
     public function store(Request $request) {
-        $request->validate([
-            'name' => 'required|string|max:50'
+        $validated = $request->validate([
+            'name' => 'required|string|max:50|unique:tags,name',
         ]);
 
-        $tag = Tag::create([
-            'name' => $request->name
-        ]);
+        $tag = Tag::create($validated);
 
-        return $tag;
+        return response()->json($tag, 201);
     }
 }
