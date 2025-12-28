@@ -25,8 +25,8 @@ interface TaskStore {
 
     fetchTasks: () => Promise<void>;
     fetchCategories: () => Promise<void>;
-    createTask: (data: Partial<Task>) => Promise<void>;
-    updateTask: (id: number, data: Partial<Task>) => Promise<void>;
+    createTask: (data: any) => Promise<void>;
+    updateTask: (id: number, data: any) => Promise<void>;
     deleteTask: (id: number) => Promise<void>;
     createCategory: (name: string) => Promise<void>;
     setSelectedCategory: (id: number | null) => void;
@@ -38,7 +38,7 @@ export const useTaskStore = create<TaskStore>((set, get) => ({
     selectedCategory: null,
 
     fetchTasks: async () => {
-        const res = await fetch('${API_BASE}/tasks');
+        const res = await fetch(`${API_BASE}/tasks`);
         const data = await res.json();
         set({ tasks: data });
     },
@@ -52,14 +52,14 @@ export const useTaskStore = create<TaskStore>((set, get) => ({
     createTask: async (data) => {
         await fetch(`${API_BASE}/tasks`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
         });
         await get().fetchTasks();
     },
 
-    updateTask: async (id,data) => {
-        await fetch(`{API_BASE}/tasks/${id}`, {
+    updateTask: async (id, data) => {
+        await fetch(`${API_BASE}/tasks/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),

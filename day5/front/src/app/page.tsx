@@ -104,7 +104,7 @@ export default function TaskListPage() {
             </ul>
 
             <Link
-                href="/create"
+                href="/tasks/create"
                 className='mt-4 inline-block bg-green-600 text-white px-4 py-2 rounded'
             >
                 New Task
