@@ -10,3 +10,7 @@ Day2 Memoアプリ
 Day3 Memo+アプリ
 
 Day4 タグ付きMemoアプリ
+
+Day5 Task管理アプリ
+
+Day6 学習ログ管理アプリ
