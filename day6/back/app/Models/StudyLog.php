@@ -11,7 +11,7 @@ class StudyLog extends Model
         'minutes'
     ];
 
-    public function subject()
+    public function subjects()
     {
         return $this->belongsToMany(Subject::class);
     }

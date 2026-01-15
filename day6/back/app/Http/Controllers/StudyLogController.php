@@ -12,12 +12,10 @@ class StudyLogController extends Controller
     {
         $query = StudyLog::with('subjects');
 
-        //* 日付指定
         if ($request->filled('date')) {
             $query->whereDate('date', $request->date);
         }
 
-        //* 範囲指定
         if ($request->filled('range')) {
             if ($request->range === 'today') {
                 $query->whereDate('date', Carbon::today());
@@ -26,7 +24,10 @@ class StudyLogController extends Controller
             if ($request->range === 'week') {
                 $query->whereBetween(
                     'date',
-                    [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()]
+                    [
+                        Carbon::now()->startOfWeek(),
+                        Carbon::now()->endOfWeek(),
+                    ]
                 );
             }
         }
@@ -38,31 +39,37 @@ class StudyLogController extends Controller
         $bySubject = [];
 
         foreach ($logs as $log) {
-            foreach ($log->subject as $subject){
+            foreach ($log->subjects as $subject) {
                 $bySubject[$subject->name] =
-                    ($bySubject[$subject->name] ?? 0) + $log->minutes;;
+                    ($bySubject[$subject->name] ?? 0) + $log->minutes;
             }
         }
 
         return response()->json([
-            'logs' => [
+            'logs' => $logs,
+            'summary' => [
                 'totalMinutes' => $totalMinutes,
                 'bySubject' => $bySubject,
             ],
         ]);
     }
 
+    //* 新規作成
     public function store(Request $request)
     {
         $log = StudyLog::create(
             $request->only(['date', 'minutes'])
         );
 
-        $log->subject()->sync($request->subject_ids);
+        $log->subjects()->sync($request->subject_ids);
 
-        return response()->json($log->load('subjects'));
+        return response()->json(
+            $log->load('subjects'),
+            201
+        );
     }
 
+    //? 更新
     public function update(Request $request, $id)
     {
         $log = StudyLog::findOrFail($id);
@@ -73,12 +80,18 @@ class StudyLogController extends Controller
 
         $log->subjects()->sync($request->subject_ids);
 
-        return response()->json($log->load('subject'));
+        return response()->json(
+            $log->load('subjects')
+        );
     }
 
+    //! 削除
     public function destroy($id)
     {
         StudyLog::findOrFail($id)->delete();
-        return response()->json(['message' => 'deleted']);
+
+        return response()->json([
+            'message' => 'deleted'
+        ]);
     }
 }
