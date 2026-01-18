@@ -1,13 +1,15 @@
 # yuma-app
 
-1日一つWebアプリを作成しています
+1日1つWebアプリを作成しています。
+
 ## Overview
-This repository contains my daily app development projects, created as part of a personal development challenge.
-Each project represents one day of work and focuses on learning through hands-on development.
+このリポジトリは、個人開発の一環として  
+**1日1アプリの開発チャレンジ**に取り組んだ成果をまとめたものです。  
+各アプリは1日分の作業として作成し、実装を通して学ぶことを目的としています。
 
 ## Development Rule
-- One application per day as a general rule
-- Exceptions are allowed only when they lead to meaningful learning or growth
+- 原則として1日1つアプリを作成する
+- 成長や学習につながる場合のみ例外を認める
 
 ## Tech Stack
 - Laravel
@@ -17,26 +19,20 @@ Each project represents one day of work and focuses on learning through hands-on
 
 ## Applications
 
-- **Day 1 (2025-12-09)** To-Do App  
-  Learned: Basic CRUD implementation with Laravel and Next.js
+- **Day 1（2025-12-09）** ToDoアプリ  
+  学んだこと：LaravelとNext.jsによる基本的なCRUD実装
 
-- **Day 2 (2025-12-10)** Memo App  
-  Learned: Simple state management and UI structure
+- **Day 2（2025-12-10）** Memoアプリ  
+  学んだこと：シンプルな状態管理とUI構成
 
-- **Day 3 (2025-12-11)** Enhanced Memo App  
-  Learned: Feature extension and refactoring
+- **Day 3（2025-12-11）** Memo+アプリ  
+  学んだこと：機能追加とリファクタリング
 
-- **Day 4 (2025-12-12)** Tagged Memo App  
-  Learned: Data modeling and tag-based filtering
+- **Day 4（2025-12-12）** タグ付きMemoアプリ  
+  学んだこと：タグを用いたデータ設計とフィルタリング
 
-- **Day 5 (2025-12-13)** Task Management App  
-  Learned: Managing complex task states
+- **Day 5（2025-12-13）** Task管理アプリ  
+  学んだこと：複雑なタスク状態の管理
 
-- **Day 6 (2025-12-14)** Learning Log App  
-  Learned: Designing a system for tracking daily study progress
-
----
-
-このリポジトリは、Laravel と Next.js を用いて  
-**1日1アプリ開発**に取り組んだ成果をまとめたポートフォリオです。  
-継続的な個人開発を通して、設計力・実装力・改善力の向上を目的としています。
+- **Day 6（2025-12-14）** 学習ログ管理アプリ  
+  学んだこと：日々の学習を記録するための設計
