@@ -1,16 +1,47 @@
 # yuma-app
-Daily app challenge using Laravel &amp; Next.js
 
-LaravelとNext.jsを使ったアプリを毎日作成しています
+1日1つWebアプリを作成しています。
 
-Day1 ToDoアプリ
+## Overview
+このリポジトリは、個人開発の一環として  
+**1日1アプリの開発チャレンジ**に取り組んだ成果をまとめたものです。  
+各アプリは1日分の作業として作成し、実装を通して学ぶことを目的としています。
 
-Day2 Memoアプリ
+## Development Rule
+- 原則として1日1つアプリを作成する
+- 原則作るアプリは毎日変更する
 
-Day3 Memo+アプリ
+## Tech Stack
+- Laravel
+- Next.js（App Router / API Route）
+- TypeScript
+- MySQL
+- Zustand（状態管理）
+- Tailwind CSS（UI）
+- Docker
 
-Day4 タグ付きMemoアプリ
+## Applications
 
-Day5 Task管理アプリ
+- **Day 1（2025-12-09）** ToDoアプリ  
+  学んだこと：LaravelとNext.jsによる基本的なCRUD実装。  
+  フロント → API → DB の基本的なデータフローを理解。
 
-Day6 学習ログ管理アプリ
+- **Day 2（2025-12-10）** Memoアプリ  
+  学んだこと：シンプルな状態管理とUI構成。  
+  Next.jsのAPI RouteとLaravel APIの役割を体験。
+
+- **Day 3（2025-12-11）** Memo+アプリ  
+  学んだこと：機能追加とリファクタリング。  
+  Zustandを用いたグローバル状態管理を導入。
+
+- **Day 4（2025-12-12）** タグ付きMemoアプリ  
+  学んだこと：タグを用いたデータ設計とフィルタリング。  
+  多対多リレーションの実装を経験。
+
+- **Day 5（2025-12-13）** Task管理アプリ  
+  学んだこと：複雑なタスク状態の管理。  
+  完成度を意識した画面遷移・機能構成を整理。
+
+- **Day 6（2025-12-14）** 学習ログ管理アプリ  
+  学んだこと：日々の学習を記録するための設計。  
+  データの集計と可視化を通して「意味のある表示」を意識。
