@@ -16,8 +16,12 @@ class ItemController extends Controller
     {
         $item = Item::findOrFail($id);
 
+        $request->validate([
+            'status' => 'required|string',
+        ]);
+
         $item->update([
-            'status' => $request->states,
+            'status' => $request->status,
         ]);
 
         return response()->json($item);
