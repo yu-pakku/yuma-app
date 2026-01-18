@@ -1,9 +1,6 @@
 # yuma-app
 
-💼 Portfolio  
-Building one application a day with Laravel and Next.js  
-Since December 9, 2025
-
+1日一つWebアプリを作成しています
 ## Overview
 This repository contains my daily app development projects, created as part of a personal development challenge.
 Each project represents one day of work and focuses on learning through hands-on development.
