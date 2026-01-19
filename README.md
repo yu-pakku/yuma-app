@@ -17,9 +17,11 @@
 - Laravel
 - Next.js（App Router / API Route）
 - TypeScript
-- MySQL
 - Zustand（状態管理）
 - Tailwind CSS（UI）
+- MySQL
+- PostgreSQL
+- Supabase
 - Docker
 
 ## Applications
