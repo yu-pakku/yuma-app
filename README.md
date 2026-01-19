@@ -16,8 +16,12 @@
 ## Tech Stack
 - Laravel
 - Next.js（App Router / API Route）
+- React.js
+- JavaScript
+- Node.js
 - TypeScript
 - Zustand（状態管理）
+- HTML.CSS
 - Tailwind CSS（UI）
 - MySQL
 - PostgreSQL
