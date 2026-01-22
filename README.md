@@ -16,10 +16,16 @@
 ## Tech Stack
 - Laravel
 - Next.js（App Router / API Route）
+- React.js
+- JavaScript
+- Node.js
 - TypeScript
-- MySQL
 - Zustand（状態管理）
+- HTML.CSS
 - Tailwind CSS（UI）
+- MySQL
+- PostgreSQL
+- Supabase
 - Docker
 
 ## Applications
@@ -48,6 +54,7 @@
   学んだこと：日々の学習を記録するための設計。  
   データの集計と可視化を通して「意味のある表示」を意識。
 
-- **Day 7（2025-12-15）** API連携CRUDアプリ
-  学んだこと：Next.js × Laravel によるAPI連携の実装。
+- **Day 7（2025-12-15）** API連携CRUDアプリ  
+  学んだこと：Next.js × Laravel によるAPI連携の実装。  
   データが存在しない状態を前提とした取得・表示設計を経験。
+
