@@ -12,6 +12,7 @@
 ## Development Rule
 - 原則として1日1つアプリを作成する
 - 原則作るアプリは毎日変更する
+- 毎日新しい技術を１つ触れる
 
 ## Tech Stack
 - Laravel
